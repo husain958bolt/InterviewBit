@@ -8,11 +8,10 @@ Your algorithm should run in O(n) time and use constant space.
 int Solution::firstMissingPositive(vector<int> &A) {
     
     int i=0;
-    int j=0;
     int t;
     
     while (i<A.size()) {
-        while ((A[i] != i+1) && A[i]>=1 && A[i]<=A.size() && A[i] != A[A[i]+j-1]) {
+        while ((A[i] != i+1) && A[i]>=1 && A[i]<=A.size() && A[i] != A[A[i]-1]) {
             t = A[A[i]-1];
             A[A[i]-1] = A[i];
             A[i] = t;
