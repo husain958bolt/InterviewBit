@@ -31,20 +31,19 @@ Output 2:
 
 struct Alpha {
     char ch;
-    int index;
+    long long int index;
 };
-
+ 
 string Solution::solve(string A, int B) {
     stack<Alpha> st; 
-    int count=0;
-    int snum;
+    long long int count=0;
+    long long int snum;
     int i=0; 
     while (i<A.length()) {
         while (i<A.length() && A[i]>='a' && A[i]<='z') {
              Alpha X;
              X.ch = A[i];
-             X.index = i+1;
-             cout<<A[i]<<" "<<i+1<<" "<<count+1<<endl;
+             X.index = count+1;
              st.push(X);
              i++;
              count++;
@@ -67,5 +66,3 @@ string Solution::solve(string A, int B) {
     }
     return res;
 }
-    
-    
